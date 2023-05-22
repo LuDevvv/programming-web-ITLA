@@ -1,0 +1,56 @@
+table {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    text-align: left;
+}
+
+td,
+th {
+    padding: 6px;
+    text-align: center;
+    vertical-align: center;
+    word-wrap: break-word;
+}
+
+thead {
+    border-bottom: 1px solid #526980;
+    border-bottom: 1px solid var(--border);
+}
+
+tfoot {
+    border-top: 1px solid #526980;
+    border-top: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #161f27;
+    background-color: var(--background);
+}
+
+
+.editar,
+.eliminar {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.editar {
+    background-color: #2196F3;
+}
+
+.eliminar {
+    background-color: #f44336;
+}
+
+#email {
+    width: 150px;
+}

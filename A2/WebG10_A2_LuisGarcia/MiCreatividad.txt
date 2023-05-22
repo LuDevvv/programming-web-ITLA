@@ -1,0 +1,10 @@
+He agregado algunas características creativas al sitio Web:
+
+1. Animaciones CSS: He utilizado animaciones CSS para hacer que ciertos elementos de mi sitio se muevan de manera suave y atractiva, brindando una experiencia visual más agradable para los usuarios.
+
+2. Agregue una tabla para mostrar los datos del los usuarios ingresado de una manera mas agradable y organizada.
+
+3. Validación de formularios en tiempo real: He implementado validaciones sencillas utilizando JavaScript.
+
+Estas son solo algunas de las mejoras y características adicionales que he implementado.
+
