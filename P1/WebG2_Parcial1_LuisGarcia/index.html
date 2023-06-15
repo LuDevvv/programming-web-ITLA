@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars APP</title>
+    <link rel="stylesheet" href="default.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content">
+      <h1 class="title">Formulario de autos</h1>
+
+      <form class="form" id="form">
+        <p class="field">
+          <label for="form-simple-marca">Marca:</label>
+          <input type="marca" id="brand" placeholder="Ingrese la marca" />
+        </p>
+        <p class="field">
+          <label for="model">Modelo:</label>
+          <input type="modelo" id="model" placeholder="Ingrese el modelo" />
+        </p>
+
+        <p class="field">
+          <label for="color">Seleccione el color:</label>
+          <br />
+          <input type="color" id="color" />
+        </p>
+
+        <p class="field">
+          <button type="submit" class="button" id="btnSend">Enviar</button>
+          <button type="reset" class="button" id="btnReset">Reset</button>
+        </p>
+      </form>
+
+      <section class="cars-ct">
+        <h2 class="title">Lista de autos 🚗</h2>
+        <p>
+          Los nuevos modelos de autos que saldrán al mercado el próximo año.
+        </p>
+        <br />
+        <div class="cars-render" id="cars-render"></div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

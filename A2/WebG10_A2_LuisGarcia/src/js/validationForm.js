@@ -1,4 +1,4 @@
-// Obtener referencias a los elementos del formulario
+  // Obtener referencias a los elementos del formulario
   const form = document.getElementById('registroForm');
   const nombreInput = document.getElementById('nombre');
   const emailInput = document.getElementById('email');
