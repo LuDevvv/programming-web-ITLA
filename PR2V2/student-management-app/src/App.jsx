@@ -7,7 +7,7 @@ import { Nav } from './components/Nav'
 import { useForm } from './hooks/useForm'
 
 export const App = () => {
-  const { handleForm, students, studentsMilitary } = useForm()
+  const { handleForm, students, studentsMilitary } = useForm();
   return (
     <div className='app'>
       <header>
@@ -18,7 +18,7 @@ export const App = () => {
           <Route path='/' element={<Hero />} />
           <Route path='/form' element={<Form handleForm={handleForm} title={'Registro Alumnos'} formType={'alumno'} />} />
           <Route path='/student-list' element={<StudentList students={students} />} />
-          <Route path='/form-military' element={<Form handleForm={handleForm} title={'Registro Militar'} formType={'alumno'} />} />
+          <Route path='/form-military' element={<Form handleForm={handleForm} title={'Registro Militar'} formType={'militar'} />} />
           <Route path='/student-military-list' element={<StudentList students={studentsMilitary} />} />
         </Routes>
       </div>

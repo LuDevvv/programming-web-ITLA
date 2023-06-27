@@ -1,40 +1,31 @@
-import { Fragment, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-
-const filters = [
-    {
-        id: 1,
-        name: 'Elegir',
-        value: false
-    },
-    {
-        id: 2,
-        name: 'Edad',
-        value: true
-    },
-    {
-        id: 3,
-        name: 'Nombre',
-        value: true
-    }
-]
+import { Fragment } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
+import { useFilter } from '../hooks/useFilter';
+import { filters } from '../constants/filters'
 
 function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(' ');
 }
 
 export const Filter = () => {
-    const [selected, setSelected] = useState(filters[0])
+    const { selectedFilter, handleFilterChange } = useFilter(filters[0]);
+
     return (
-        <Listbox value={selected} onChange={setSelected} className="max-w-2xl filter">
+        <Listbox
+            value={selectedFilter}
+            onChange={handleFilterChange}
+            className="max-w-4xl filter"
+        >
             {({ open }) => (
                 <>
-                    <Listbox.Label className=" text-sm font-medium leading-6 text-gray-90 max-w-2xl py-10">Filtrar por:</Listbox.Label>
+                    <Listbox.Label className="text-sm font-medium leading-6 text-gray-90 max-w-4xl py-10">
+                        Filtrar por:
+                    </Listbox.Label>
                     <div className="relative mt-2">
                         <Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6 max-w-2xl">
                             <span className="flex items-center">
-                                <span className="ml-3 block truncate">{selected.name}</span>
+                                <span className="ml-3 block truncate">{selectedFilter.name}</span>
                             </span>
                             <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                                 <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -48,7 +39,7 @@ export const Filter = () => {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                         >
-                            <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm max-w-2xl">
+                            <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm max-w-2xl">
                                 {filters.map((filter) => (
                                     <Listbox.Option
                                         key={filter.id}
@@ -64,7 +55,10 @@ export const Filter = () => {
                                             <>
                                                 <div className="flex items-center ">
                                                     <span
-                                                        className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
+                                                        className={classNames(
+                                                            selected ? 'font-semibold' : 'font-normal',
+                                                            'ml-3 block truncate'
+                                                        )}
                                                     >
                                                         {filter.name}
                                                     </span>
@@ -90,5 +84,5 @@ export const Filter = () => {
                 </>
             )}
         </Listbox>
-    )
-}
+    );
+};

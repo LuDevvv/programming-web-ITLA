@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { useStorage } from './useStorage';
 import { getImages } from '../services/getImages';
+import { useFilter } from './useFilter';
+import { filters } from '../constants/filters';
 
 export const useForm = () => {
   const [student, setStudent] = useState(null);
   const [militaryStudents, setMilitaryStudents] = useState(null);
+  const { selectedFilter, handleFilterChange } = useFilter(filters[0]);
+
+  const handleFilter = () => {};
+
   const { students, studentsMilitary } = useStorage({
     student,
     militaryStudents,
+    selectedFilter,
   });
 
   const handleForm = async (e, formType) => {

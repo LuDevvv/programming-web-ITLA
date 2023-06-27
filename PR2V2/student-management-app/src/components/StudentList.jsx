@@ -6,7 +6,7 @@ export const StudentList = ({ students }) => {
             <Filter />
 
             <ul role="list" className="divide-y divide-gray-100 mx-auto max-w-2xl">
-                {students?.map((student) => {
+                {students?.sort((a, b) => b.age - a.age).map((student) => {
                     let bgColor = '';
                     if (student?.destiny?.color === 'ROJO') bgColor = 'bg-red-500';
                     if (student?.destiny?.color === 'MARRON') bgColor = 'bg-orange-900';
